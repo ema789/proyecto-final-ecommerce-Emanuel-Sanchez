@@ -1,4 +1,4 @@
- import { generateToken } from '../utils/token-generator.js'; 
+import { generateToken } from '../utils/token-generator.js'; 
 const default_user = {       
     id: 1,       
     email: "emasz473@gmail.com",       

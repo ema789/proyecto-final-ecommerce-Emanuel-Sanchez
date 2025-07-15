@@ -1,4 +1,4 @@
-import { parse } from 'dotenv';
+
 import *as model from '../models/products.model.js';
 
 // Exportamos la función como controlador asincrónico.

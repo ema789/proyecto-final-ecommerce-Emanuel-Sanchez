@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import productRouters from './src/routers/product.router.js';
 import authRouter from './src/routers/auth.routes.js';
 import { authentication } from './src/middlewares/authentication.js';
-//import { errorHandler } from './src/middlewares/errorHandler.js'
 
 // Inicializa configuración de variables de entorno
 dotenv.config();
@@ -28,13 +27,6 @@ app.get("/",(req, res) => {
 app.use('/auth', authRouter); // Rutas de autenticación
 app.use('/api', authentication, productRouters);// Rutas de productos
 
-//app.use(errorHandler);
-
-// Middleware para manejar rutas no encontradas
-
-// Middleware para manejar errores generales (si querés usarlo en el futuro)
-// app.use(errorHandler);
-
 // Puerto de escucha
 app.use((req, res, next)=>{
     res.status(404).send(`Resources not found`);
@@ -42,6 +34,3 @@ app.use((req, res, next)=>{
 
 const PORT = process.env.PORT || 4001;
 app.listen(PORT, ()=> console.log(`http://localhost:${PORT}`));
-
-
-
